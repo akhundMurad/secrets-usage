@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app-backend
+    container_name: app-backend
+    restart: always
+    tty: true
+    ports:
+      - "0.0.0.0:5000:5000"
+    environment:
+      - DATABASE_CONNECTION_STRING=postgresql://docker:docker@app-postgresql:5432/demo
+      - SECRET_KEY=85351EA0D9BAC7A099D1C753867B32A4
+    depends_on:
+      - app-postgresql
+    security_opt:
+      - no-new-privileges:true
+  
+  app-postgresql:
+    image: postgres:15-alpine
+    container_name: app-postgresql
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=demo
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_HOST=app-postgresql
+      - POSTGRES_PORT=5432
+    ports:
+      - "5432:5432"
+    security_opt:
+      - no-new-privileges:true

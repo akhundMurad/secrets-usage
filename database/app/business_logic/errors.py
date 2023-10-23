@@ -1,0 +1,2 @@
+class BusinessLogicError(Exception):
+    pass
