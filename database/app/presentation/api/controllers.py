@@ -21,4 +21,4 @@ class SecretsController:
         secret_name = req.get_param("secret_name", required=True)
         service = self._container.resolve(SecretsService)
         secret = service.get_secret_by_name(name=secret_name)
-        resp.media = self._factory.dump(secret, dict)
+        resp.media = self._factory.dump(secret)

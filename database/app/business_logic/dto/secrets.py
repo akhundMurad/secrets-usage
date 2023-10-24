@@ -9,3 +9,10 @@ class SecretDTO:
     value: str
     iv: str
     created_at: datetime
+
+
+@dataclass(kw_only=True)
+class SecretShortDTO:
+    name: str
+    value: str
+    created_at: datetime
