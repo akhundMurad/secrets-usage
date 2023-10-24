@@ -10,7 +10,7 @@ services:
     restart: always
     tty: true
     ports:
-      - "0.0.0.0:5000:5000"
+      - "0.0.0.0:8000:8000"
     environment:
       - DATABASE_CONNECTION_STRING=postgresql://docker:docker@app-postgresql:5432/demo
       - SECRET_KEY=85351EA0D9BAC7A099D1C753867B32A4
