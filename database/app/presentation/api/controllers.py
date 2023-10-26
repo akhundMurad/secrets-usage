@@ -1,8 +1,7 @@
+from app.business_logic.services.secrets_service import SecretsService
 from dataclass_factory import Factory
 from falcon import HTTP_201, Request, Response
 from rodi import Container
-
-from app.business_logic.services.secrets_service import SecretsService
 
 
 class SecretsController:

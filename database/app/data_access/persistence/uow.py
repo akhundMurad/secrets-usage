@@ -1,9 +1,8 @@
 from logging import getLogger
 
+from app.data_access.errors import DataAccessError
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-
-from app.data_access.errors import DataAccessError
 
 logger = getLogger(__name__)
 

@@ -1,13 +1,12 @@
 from typing import Callable
 
-from falcon import App
-from rodi import Container
-
 from app.business_logic.errors import BusinessLogicError
 from app.data_access.errors import DataAccessError
 from app.main.di import build_container
 from app.presentation.api import controllers, exception_handlers
 from app.presentation.errors import PresentationError
+from falcon import App
+from rodi import Container
 
 
 def build_wsgi(container_builder: Callable[[], Container] = build_container) -> App:

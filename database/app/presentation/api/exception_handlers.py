@@ -1,8 +1,7 @@
-from falcon import Request, Response, status_codes
-
 from app.business_logic.errors import BusinessLogicError
 from app.data_access.errors import DataAccessError
 from app.presentation.errors import PresentationError
+from falcon import Request, Response, status_codes
 
 
 def handle_data_access_level_exception(

@@ -1,9 +1,8 @@
 from datetime import datetime
 
-from sqlalchemy.orm import Session
-
 from app.business_logic.dto.secrets import SecretDTO
 from app.data_access.persistence.tables import secrets_table
+from sqlalchemy.orm import Session
 
 
 class SecretsGateway:

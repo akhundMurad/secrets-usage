@@ -1,11 +1,10 @@
-from rodi import ActivationScope, Container, ServiceLifeStyle
-from sqlalchemy.engine import Engine, create_engine
-from sqlalchemy.orm import Session, sessionmaker
-
 from app.business_logic.services.secrets_service import SecretsService
 from app.data_access.persistence.secrets_gateway import SecretsGateway
 from app.data_access.persistence.uow import UoW
 from app.main.config import ApplicationSettings, DatabaseSettings
+from rodi import ActivationScope, Container, ServiceLifeStyle
+from sqlalchemy.engine import Engine, create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
 
 def build_container() -> Container:

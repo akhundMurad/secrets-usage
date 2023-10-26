@@ -1,13 +1,12 @@
 from base64 import b64decode, b64encode
 
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
-
 from app.business_logic.dto.secrets import SecretShortDTO
 from app.business_logic.errors import BusinessLogicError
 from app.data_access.persistence.secrets_gateway import SecretsGateway
 from app.data_access.persistence.uow import UoW
 from app.main.config import ApplicationSettings
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
 
 
 class SecretsService:
